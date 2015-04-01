@@ -181,7 +181,7 @@ void Run(int *computer, int n)
 
 //output all list
 void Outputall(int *computer, int n)
-{archlinux
+{
 	for (int id = 0; id < n; id++)
 	{
 		NumberUpdata(computer, id);
