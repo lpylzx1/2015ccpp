@@ -4,7 +4,7 @@ Usage:
 	N ---------> 	How many kinds of computer
 	enum PC -->	Have N element, from 0 to (N - 1)
 	and,
-		you need update the function "Name",
+		you need update the function "Name"
 
 ******************************************************************************/
 #include <stdio.h>
@@ -181,7 +181,7 @@ void Run(int *computer, int n)
 
 //output all list
 void Outputall(int *computer, int n)
-{
+{archlinux
 	for (int id = 0; id < n; id++)
 	{
 		NumberUpdata(computer, id);
