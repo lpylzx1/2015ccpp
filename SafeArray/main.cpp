@@ -2,13 +2,10 @@
 #include "SafeArray.h"
 using namespace std;
 
-int main(int argc, char const *argv[])
+int main()
 {
-    SafeArray a(100);
-    a.Set(0,100);
-    a.Set(20,2000);
-    a.Set(100,300);
-    cout<<a.Get(0)<<endl;
-    cout<<a.Get(1000)<<endl;
+    SafeArray a (100);
+    a[99] = 100;
+    std::cout << a;
     return 0;
 }

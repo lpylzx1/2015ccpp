@@ -1,7 +1,7 @@
 /*
  * SafeArray.cpp
  *
- *  Created on: 2015年4月14日
+ *  Created on: 2015年4月20日
  *      Author: lc4t
  */
 #include "SafeArray.h"
@@ -17,7 +17,7 @@ SafeArray::SafeArray(int size)
 {
     array = new int[size];
     truesize = size;
-}   
+}
 
 SafeArray::~SafeArray()
 {
@@ -28,7 +28,8 @@ int SafeArray::Set(int index, int data)
 {
     if (index < 0 || index >= truesize)
     {
-        throw("OverFlow\n");
+        std::cout << "OverFlow" << std::endl;
+        return -1;
     }
     else
     {
@@ -49,5 +50,28 @@ int SafeArray::Get(int index)
     }
 }
 
+int& SafeArray::operator [] (int offset)
+{
+    if (offset < truesize)
+    {
+        return array[offset];
+    }
+    else
+    {
+        std::cout << "OverFlow" << std::endl;
+    }
 
+}
 
+std::ostream & operator<<(std::ostream & o, const SafeArray &sa)
+{
+    for (int i = 0; i < sa.truesize; i+=5)
+    {
+        for (int j = 0;j <= 4; j++)
+        {
+            o<<sa.array[i + j]<<"\t";
+        }
+        o<<"\n";
+    }
+    return o;
+}
