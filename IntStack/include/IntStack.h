@@ -10,6 +10,7 @@ class IntStack
         void Push(int data);
         int Pop();
         int Length();
+        void NewNumber(int size);
     private:
         vector<int> dataOfIntStack;
 };

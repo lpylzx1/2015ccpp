@@ -1,13 +1,17 @@
 /*
  * Node.cpp
  *
- *  Created on: 2015年4月17日
+ *  Created on: 2015年4月27日
  *      Author: lc4t
  */
 
 #include "Node.h"
+
+#include "Node.h"
 #include <vector>
 using namespace std;
+Node::Node() {}
+
 Node::Node(int idata) {
 	// TODO Auto-generated constructor stub
 	data = idata;
@@ -45,3 +49,5 @@ Node* Node::GetParent()
 {
 	return this->parent;
 }
+
+

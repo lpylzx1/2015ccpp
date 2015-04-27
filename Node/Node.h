@@ -1,47 +1,31 @@
 /*
- * Node.cpp
+ * Node.h
  *
- *  Created on: 2015年4月17日
+ *  Created on: 2015年4月27日
  *      Author: lc4t
  */
+
+#ifndef NODE_H_
+#define NODE_H_
 
 #include "Node.h"
 #include <vector>
 using namespace std;
-Node::Node(int idata) {
-	// TODO Auto-generated constructor stub
-	data = idata;
-
-}
-
-void Node::Append(Node* child)
+class Node
 {
-	children.push_back(child);
-	child->parent = this;
-}
+	public:
+		Node();
+		Node(int idata);
+		void Append(Node* child);
+		int Count();
+		~Node();
+		int GetValue();
+		Node* GetParent();
+	private:
+		int data;
+		vector<Node*> children;
+		Node * parent;
 
-int Node::Count()
-{
-	int cnt = 1;
+};
 
-	for (vector<Node*>::iterator i = children.begin();i != children.end(); i++)
-	{
-		cnt += (*i)->Count();
-	}
-	return cnt;
-}
-
-Node::~Node()
-{
-	// TODO Auto-generated destructor stub
-}
-
-int Node::GetValue()
-{
-	return data;
-}
-
-Node* Node::GetParent()
-{
-	return this->parent;
-}
+#endif /* NODE_H_ */
